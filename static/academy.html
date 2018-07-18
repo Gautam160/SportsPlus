@@ -16,27 +16,43 @@
       <form>
         <div class="form-group">
           <label>Name</label>
-          <input type="text" class="form-control" placeholder="Add Name" required="">
+          <input type="text" ng-model="academy.name" class="form-control" placeholder="Add Name" required="">
         </div>
 
         <div class="form-group">
           <label>Created Date</label>
-          <input type="date" class="form-control" placeholder="Add Name" required="">
+          <input type="date" ng-model="academy.createdate" class="form-control" placeholder="Add Date" required="">
         </div>
 		
          <div class="form-group">
           <label>Update Date</label>
-          <input type="date" class="form-control" placeholder="Add Name" required="">
+          <input type="date" ng-model="updatedate" class="form-control" placeholder="Add Date" required="">
         </div>
 
         <div class="form-inline">
-        	<button type="submit" class="btn btn-primary">SUBMIT</button>
-        	<button type="submit" class="btn btn-info">EDIT</button>
-        	<button type="submit" class="btn btn-danger">DELETE</button>
+        	<button ng-click="saveAcademy()" class="btn btn-primary">SUBMIT</button>
+        	<button ng-click="updateAcademy()" class="btn btn-info">EDIT</button>
+        	<button ng-click="deleteAcademy()" class="btn btn-danger">DELETE</button>
         </div>
         
         </form>
 
+</div>
+<hr>
+<div class="clearfix"></div>
+	<table class="table table-strip table-hover" data-ng-init="fetchAcademy()">
 
+		<tr style="background-color: cyan">
+			<td><b>Name</b></td>
+			<td><b>Created Date</b></td>
+			<td><b>Update Date</b></td>
+			
+		</tr>
+		<tr ng-repeat="academy in academies">
+			<td>{{academy.name}}</td>
+			<td>{{academy.createdate}}</td>
+			<td>{{academy.updateAcademy}}</td>
+		</tr>
+	</table>
 </body>
 </html>

@@ -16,34 +16,49 @@
       <form>
         <div class="form-group">
           <label>Name</label>
-          <input type="text" class="form-control" placeholder="Add Name" required="">
+          <input type="text" ng-model="coach.name" class="form-control" placeholder="Add Name" required="">
         </div>
 
         <div class="form-group">
           <label>Speciality</label>
-          <input type="text" class="form-control" placeholder="Add speciality" required="">
+          <input type="text" ng-model="coach.speciality" class="form-control" placeholder="Add speciality" required="">
         </div>
 		
 		<div class="form-group">
           <label>Qualification</label>
-          <input type="text" class="form-control" placeholder="Add qualfication" required="">
+          <input type="text" ng-model="coach.qualfication" class="form-control" placeholder="Add qualfication" required="">
         </div>
 		
 		<div class="form-group">
           <label>Group Id</label>
-          <input type="text" class="form-control" placeholder="Add groupId" required="">
+          <input type="text" ng-model="coach.groupid" class="form-control" placeholder="Add groupId" required="">
         </div>
 		
       
 
         <div class="form-inline">
-        	<button type="submit" class="btn btn-primary">SUBMIT</button>
-        	<button type="submit" class="btn btn-info">EDIT</button>
-        	<button type="submit" class="btn btn-danger">DELETE</button>
+        	<button ng-click="saveCoach()" class="btn btn-primary">SAVE</button>
+        	<button ng-click="updateCoach()" class="btn btn-info">EDIT</button>
+        	<button ng-click="deleteCoach()" class="btn btn-danger">DELETE</button>
         </div>
         
         </form>
 
+</div>
+<hr>
+<div class="clearfix"></div>
+	<table class="table table-strip table-hover" data-ng-init="fetchCoach()">
 
+		<tr style="background-color: cyan">
+			<td><b>Name</b></td>
+			<td><b>Speciality</b></td>
+			<td><b>Qualification</b></td>
+			<td><b>Group Id</b></td>
+		</tr>
+		<tr ng-repeat="coach in coachs">
+			
+		</tr>
+	</table>
+	
 </body>
 </html>
