@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ATHLETE FORM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+<!-- FORMS -->
+    <div class="container">
+    	<center><h2>REGISTER</h2></center>
+      <form>
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" ng-model="athlete.firstName" class="form-control" placeholder="Add Name" required="">
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" ng-model="athlete.lastName" class="form-control" placeholder="Add Name" required="">
+        </div>
+
+        <div class="form-group">
+          <label>Date Of Birth</label>
+          <input type="date" ng-model="athlete.dOB" class="form-control" placeholder="Add Name" required="">
+        </div>
+
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" ng-model="athlete.age" class="form-control" placeholder="Add Age">
+        </div>
+
+
+        <div class="form-group">
+          <label>Gender</label>
+          <select class="form-control">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Contact Number</label>
+          <input type="number" ng-model="athlete.contactNo" class="form-control" placeholder="Add Number" required="">
+        </div>
+		
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" ng-model="athlete.address" class="form-control" placeholder="Add Address">
+        </div>
+ 		<div class="form-group">
+          <label>City</label>
+          <input type="number" ng-model="athlete.city" class="form-control" placeholder="Add City" required="">
+        </div>
+        <div class="form-group">
+          <label>Pincode</label>
+          <input type="number" ng-model="athlete.pincode" class="form-control" placeholder="Add Pincode" required="">
+        </div>
+        <div class="form-group">
+          <label>Parent/Guardian Full Name</label>
+          <input type="text" ng-model="athlete.guardianName" class="form-control" placeholder="Add Parent/Guardian Name">
+        </div>
+		 
+        <div class="form-group">
+          <label>Parent/Guardian Address</label>
+          <input type="text" ng-model="athlete.guardianAddress" class="form-control" placeholder="Add Address" required="">
+        </div>
+
+        <div class="form-group">
+          <label>Parent/Guardian Contact Number</label>
+          <input type="text" ng-model="athlete.guardianContact" class="form-control" placeholder="Add contact" required="">
+        </div>
+
+
+        <div class="form-group">
+          <label>Primary Sports</label>
+          <select class="form-control" required="">
+            <option value="cricket">Cricket</option>
+            <option value="football">Football</option>
+            <option value="badminton">Badminton</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Academy/Training Base</label>
+          <input type="text" ng-model="athlete.trainingBase" class="form-control" placeholder="Add Academy/Training">
+        </div>
+
+        <div class="form-group">
+          <label>School/College/University</label>
+          <input type="text" ng-model="athlete.college" class="form-control" placeholder="Add college">
+        </div>
+
+        <div class="form-group">
+          <label>Group Id</label>
+          <input type="text" ng-model="athlete.groupId" class="form-control" placeholder="Add group id">
+        </div>
+
+        <div class="form-group">
+          <label>Coach Id</label>
+          <input type="text" ng-model="athlete.coachId" class="form-control" placeholder="Add coach id">
+        </div>
+
+        <div class="form-group">
+          <label>Level</label>
+          <select class="form-control">
+            <option value="regular">Regular</option>
+            <option value="elite">Elite</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Residential Status</label>
+          <select class="form-control">
+            <option value="residential">Residential</option>
+            <option value="non-residential">Non-Residential	</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Athlete Status</label>
+          <select class="form-control">
+            <option value="training">Training(Pre-Season)</option>
+            <option value="offseason">Off-Season</option>
+            <option value="competition">Competition Mode(In-Season)</option>
+            <option value="post-competition">Post-Competition</option>
+            <option value="injured">Injured</option>
+            <option value="rehabilitation">Rehabilitation</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Blood Group</label>
+          <input type="text" ng-model="athlete.bloodGroup" class="form-control" placeholder="Add Blood group">
+        </div>
+
+        <div class="form-inline">
+        	<button ng-click="saveAthlete()" class="btn btn-primary">SAVE</button>
+        	<button ng-click="updateAthlete()" class="btn btn-info">EDIT</button>
+        	<button ng-click="deleteAthelete()" class="btn btn-danger">DELETE</button>
+        </div>
+        
+        </form>
+</div>
+<hr>
+
+<div class="clearfix"></div>
+	<table class="table table-strip table-hover" data-ng-init="fetchAthlete()">
+
+		<tr style="background-color: cyan">
+			<td><b>First Name</b></td>
+			<td><b>Last Name</b></td>
+			<td><b>Date of Birth</b></td>
+			<td><b>Age</b></td>
+			<td><b>Gender</b></td>
+			<td><b>Email</b></td>
+			<td><b>Picture</b></td>
+			<td><b>Contact number</b></td>
+			<td><b>Address</b></td>
+			<td><b>Parent/Guardian Full Name</b></td>
+			<td><b>Parent/Guardian Address</b></td>
+			<td><b>Parent/Guardian Contact Number</b></td>
+			<td><b>Primary Sports</b></td>
+			<td><b>Academy/Training Base</b></td>
+			<td><b>School/College/University</b></td>
+			<td><b>Group Id</b></td>
+			<td><b>Coach Id</b></td>
+			<td><b>Level</b></td>
+			<td><b>Residential Status</b></td>
+			<td><b>Athlete Status</b></td>
+			<td><b>Blood Group</b></td>
+		</tr>
+		<tr ng-repeat="athlete in athletes">
+			
+		</tr>
+	</table>
+
+</body>
+</html>

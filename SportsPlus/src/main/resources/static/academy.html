@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ACADEMY FORM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+<!-- FORMS -->
+    <div class="container">
+    	<center><h2>ACADEMY DETAILS</h2></center>
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" ng-model="academy.academyName" class="form-control" placeholder="Add Name" required="">
+        </div>
+
+        <div class="form-group">
+          <label>Created Date</label>
+          <input type="date" ng-model="academy.academyCreatedDate" class="form-control" placeholder="Add Date" required="">
+        </div>
+		
+         <div class="form-group">
+          <label>Update Date</label>
+          <input type="date" ng-model="academy.academyUpdatedDate" class="form-control" placeholder="Add Date" required="">
+        </div>
+
+        <div class="form-inline">
+        	<button ng-click="saveAcademy()" class="btn btn-primary">SAVE</button>
+        	<button ng-click="updateAcademy()" class="btn btn-info">EDIT</button>
+        	<button ng-click="deleteAcademy()" class="btn btn-danger">DELETE</button>
+        </div>
+        
+        </form>
+        
+</div>
+<hr>
+<p> newAcademy={{academy}}</p>
+
+<div class="clearfix"></div>
+	<table class="table table-strip table-hover" data-ng-init="fetchAcademy()">
+
+		<tr style="background-color: cyan">
+			<td><b>Name</b></td>
+			<td><b>Created Date</b></td>
+			<td><b>Update Date</b></td>
+			
+		</tr>
+		<tr ng-repeat="academy in academies">
+			<td>{{academy.academyName}} </td>
+			<td>{{academy.academyCreateDate}} </td>
+			<td>{{academy.academyUpdateDate}} </td>
+		</tr>
+	</table>
+</body>
+</html>

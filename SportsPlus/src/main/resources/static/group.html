@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GROUP FORM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+<!-- FORMS -->
+    <div class="container">
+    	<center><h2>GROUP</h2></center>
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" ng-model="group.groupName" class="form-control" placeholder="Add Name" required="">
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" ng-model="group.groupDescription" class="form-control" placeholder="Add Name" required="">
+        </div>
+		
+        <div class="form-group">
+          <label>Status</label>
+          <select class="form-control">
+            <option value="pre-season">Pre-Season</option>
+            <option value="off-season">Off-Season</option>
+            <option value="post-competition">Post-Competition</option>
+			<option value="injured">Injured</option>
+			<option value="rehabilitation">Rehabilitation</option>
+          </select>
+        </div>
+		<div class="form-group">
+          <label>Coach Id</label>
+          <input type="text" ng-model="group.coachId" class="form-control" placeholder="Add coach" required="">
+        </div>
+        <div class="form-inline">
+        	<button ng-click="saveGroup()" class="btn btn-primary">SAVE</button>
+        	<button ng-click="updateGroup()" class="btn btn-info">EDIT</button>
+        	<button ng-click="deleteGroup()" class="btn btn-danger">DELETE</button>
+        </div>
+        
+        </form>
+
+</div>
+<hr>
+
+<div class="clearfix"></div>
+	<table class="table table-strip table-hover" data-ng-init="fetchGroup()">
+
+		<tr style="background-color: cyan">
+			<td><b>Name</b></td>
+			<td><b>Description</b></td>
+			<td><b>Status</b></td>
+			<td><b>Coach Id</b></td>
+		</tr>
+		<tr ng-repeat="group in groups ">
+			
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>COACH FORM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+<!-- FORMS -->
+    <div class="container">
+    	<center><h2>COACH</h2></center>
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" ng-model="coach.coachName" class="form-control" placeholder="Add Name" required="">
+        </div>
+
+        <div class="form-group">
+          <label>Speciality</label>
+          <input type="text" ng-model="coach.coachSpeciality" class="form-control" placeholder="Add speciality" required="">
+        </div>
+		
+		<div class="form-group">
+          <label>Phone Number</label>
+          <input type="text" ng-model="coach.coachPhno" class="form-control" placeholder="Add phonr_number" required="">
+        </div>
+		
+		<div class="form-group">
+          <label>Group Id</label>
+          <input type="text" ng-model="coach.groupId" class="form-control" placeholder="Add groupId" required="">
+        </div>
+		
+      
+
+        <div class="form-inline">
+        	<button ng-click="saveCoach()" class="btn btn-primary">SAVE</button>
+        	<button ng-click="updateCoach()" class="btn btn-info">EDIT</button>
+        	<button ng-click="deleteCoach()" class="btn btn-danger">DELETE</button>
+        </div>
+        
+        </form>
+
+</div>
+<hr>
+<div class="clearfix"></div>
+	<table class="table table-strip table-hover" data-ng-init="fetchCoach()">
+
+		<tr style="background-color: cyan">
+			<td><b>Name</b></td>
+			<td><b>Speciality</b></td>
+			<td><b>Phone Number</b></td>
+			<td><b>Group Id</b></td>
+		</tr>
+		<tr ng-repeat="coach in coachs">
+			
+		</tr>
+	</table>
+	
+</body>
+</html>
